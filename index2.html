@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="form-card">
+        <h2>Iniciar Sesión</h2>
+        <form>
+            <label class="label">Nombre de Usuario</label>
+            <input 
+                type="text" 
+                id="username" 
+                name="usuario_nombre" 
+                placeholder="Escribe tu nombre de usuario" 
+                maxlength="50" 
+                required>
+
+            <label class="label">Contraseña</label>
+            <input 
+                type="password" 
+                id="password" 
+                name="usuario_clave" 
+                placeholder="Escribe tu contraseña" 
+                pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_])[A-Za-z\d\W_]{8,16}$" 
+                title="Debe tener entre 8 y 16 caracteres, incluyendo al menos una letra minúscula, una letra mayúscula, un número y un carácter especial." 
+                required>
+
+            <div class="buttons">
+                <button type="submit" class="button">Iniciar Sesión</button>
+                <button type="reset" class="button button-danger">Cancelar</button>
+            </div>
+
+            <div class="additional-info">
+                <p>¿No tienes una cuenta? <a href="index1.html">Regístrate aquí</a></p>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

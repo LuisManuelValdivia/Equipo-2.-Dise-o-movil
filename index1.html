@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="form-card">
+        <h2>Registro de Usuario</h2>
+        <form>
+            <label class="label">Nombre de usuario</label>
+            <input 
+                type="text" 
+                id="username" 
+                name="usuario_nombre" 
+                placeholder="Escribe tu nombre de usuario" 
+                pattern="^(?=.*[a-zA-ZáéíóúÁÉÍÓÚñÑ])[a-zA-ZáéíóúÁÉÍÓÚñÑ0-9 ]{2,20}$" 
+                title="El nombre debe tener al menos una letra y puede incluir números, pero no caracteres especiales." 
+                required>
+
+            <label class="label">Teléfono</label>
+            <input 
+                type="tel" 
+                id="telefono" 
+                name="usuario_telefono" 
+                placeholder="Escribe tu número de teléfono" 
+                pattern="^\d{10}$" 
+                title="El número de teléfono debe contener exactamente 10 dígitos." 
+                required>
+
+            <label class="label">Correo electrónico</label>
+            <input 
+                type="email" 
+                id="email" 
+                name="usuario_email" 
+                maxlength="70" 
+                placeholder="Escribe tu correo vigente" 
+                required>
+
+            <label class="label">Contraseña</label>
+            <input 
+                type="password" 
+                id="password1" 
+                name="usuario_clave_1" 
+                placeholder="Escribe tu contraseña" 
+                pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_])[A-Za-z\d\W_]{8,16}$" 
+                title="Debe tener entre 8 y 16 caracteres, incluyendo al menos una letra minúscula, una letra mayúscula, un número y un carácter especial." 
+                required>
+
+            <label class="label">Confirmar contraseña</label>
+            <input 
+                type="password" 
+                id="password2" 
+                name="usuario_clave_2" 
+                placeholder="Confirma tu contraseña" 
+                pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_])[A-Za-z\d\W_]{8,16}$" 
+                title="Debe coincidir con la contraseña anterior y cumplir los mismos requisitos." 
+                required>
+
+            <label class="label">Pregunta secreta</label>
+            <select id="pregunta" name="usuario_pregunta" required>
+                <option value="" disabled selected>Selecciona una pregunta</option>
+                <option value="1">¿Cuál es el nombre de tu primera mascota?</option>
+                <option value="2">¿Cuál es tu comida favorita?</option>
+                <option value="3">¿En qué ciudad naciste?</option>
+            </select>
+
+            <label class="label">Respuesta de seguridad</label>
+            <input 
+                type="text" 
+                id="respuesta" 
+                name="usuario_respuesta" 
+                placeholder="Escribe tu respuesta" 
+                pattern="^[a-zA-ZáéíóúÁÉÍÓÚñÑ0-9 ]{3,50}$" 
+                title="Debe tener entre 3 y 50 caracteres, sin incluir caracteres especiales." 
+                required>
+
+            <div class="buttons">
+                <button type="submit" class="button">Registrarse</button>
+                <button type="reset" class="button button-danger">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

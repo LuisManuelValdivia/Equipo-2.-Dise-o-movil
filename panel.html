@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel de Alertas</title>
+  <link rel="stylesheet" href="/Bocetos_equipo/styles.css">
+
+</head>
+<body>
+
+  <div class="container">
+    <div class="header">
+      <span>"Usuario1"</span>
+      
+      <div class="dropdown">
+        <img src="USUARIO.png" alt="Usuario" id="userIcon" style="cursor: pointer;">
+        <div class="dropdown-content" id="dropdownMenu">
+          <a href="#" onclick="cerrarSesion()">Cerrar sesión</a>
+          <a href="#" onclick="volver()">Volver</a>
+        </div>
+      </div>
+
+    </div>
+
+    <h2>Panel de Alertas</h2>
+    <table class="alert-table">
+      <thead>
+        <tr>
+          <th>Título</th>
+          <th>Descripción</th>
+          <th>Fecha</th>
+          <th>Estado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Alerta 1</td>
+          <td>Error en sensor</td>
+          <td>2025-01-27</td>
+          <td>Activo</td>
+        </tr>
+        <tr>
+          <td>Alerta 2</td>
+          <td>Batería baja</td>
+          <td>2025-01-26</td>
+          <td>Resuelto</td>
+        </tr>
+        <tr>
+          <td>Alerta 3</td>
+          <td>Desconexión de red</td>
+          <td>2025-01-25</td>
+          <td>Pendiente</td>
+        </tr>
+        <tr>
+          <td>Alerta 4</td>
+          <td>Temperatura elevada</td>
+          <td>2025-01-24</td>
+          <td>Activo</td>
+        </tr>
+        <tr>
+          <td>Alerta 5</td>
+          <td>Mantenimiento programado</td>
+          <td>2025-01-23</td>
+          <td>Resuelto</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script>
+    //Quitar si es necesario 
+    document.getElementById("userIcon").addEventListener("click", function() {
+      var menu = document.getElementById("dropdownMenu");
+      menu.style.display = menu.style.display === "block" ? "none" : "block";
+    });
+    function cerrarSesion() {
+      window.location.href = "/Bocetos_equipo/index2.html"; 
+    }
+    function volver() {
+      window.history.back(); 
+    }
+    document.addEventListener("click", function(event) {
+      var menu = document.getElementById("dropdownMenu");
+      var icon = document.getElementById("userIcon");
+      
+      if (!menu.contains(event.target) && !icon.contains(event.target)) {
+        menu.style.display = "none";
+      }
+    });
+  </script>
+
+</body>
+</html>
